@@ -7,9 +7,9 @@ function MovieCard({ movie, onAddToToWatch, onAddToWatched, onAddToFavorites }) 
 
   return (
     <div className="movie-card">
-      <img src={movie.poster} alt={movie.title} />
-      <h3>{movie.title}</h3>
-      <p>{movie.overview}</p>
+      <img src={movie.Poster} alt={movie.Title} />
+      <h3>{movie.Title}</h3>
+      <p>{movie.Year}</p>
       <div className="movie-card-buttons">
         <button onClick={() => onAddToToWatch(movie)}>Add to To Watch</button>
         <button onClick={() => onAddToWatched(movie)}>Add to Watched</button>

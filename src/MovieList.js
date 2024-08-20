@@ -10,7 +10,7 @@ function MovieList({ movies = [], onAddToToWatch, onAddToWatched, onAddToFavorit
     <div className="movie-list">
       {movies.map(movie => (
         <MovieCard
-          key={movie.id}
+          key={movie.imdbID}
           movie={movie}
           onAddToToWatch={onAddToToWatch}
           onAddToWatched={onAddToWatched}

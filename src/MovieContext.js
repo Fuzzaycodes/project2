@@ -10,6 +10,7 @@ function MovieProvider({ children }) {
   const [toWatch, setToWatch] = useState([]);
   const [watched, setWatched] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  //const [currentlyWatching, setCurrentlyWatching] = useState([]);
 
   const addToToWatch = (movie) => {
     setToWatch(prevToWatch => [...prevToWatch, movie]);
@@ -23,15 +24,27 @@ function MovieProvider({ children }) {
     setFavorites(prevFavorites => [...prevFavorites, movie]);
   };
 
+  const markAsWatched = (movie) => {
+    setToWatch(prevToWatch => prevToWatch.filter(m => m.imdbID !== movie.imdbID));
+    setWatched(prevWatched => [...prevWatched, movie]);
+  };
+
+  const removeFromFavorites = (movie) => {
+    setFavorites(prevFavorites => prevFavorites.filter(m => m.imdbID !== movie.imdbID));
+  };
+
   return (
     <MovieContext.Provider
       value={{
         toWatch,
         watched,
         favorites,
+       // currentlyWatching,
         addToToWatch,
         addToWatched,
         addToFavorites,
+        markAsWatched,
+        removeFromFavorites,
       }}
     >
       {children}

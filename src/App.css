@@ -1,0 +1,18 @@
+nav {
+  background: #333;
+  padding: 1rem;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+form {
+  margin: 1rem;
+}
+
+input {
+  margin-right: 1rem;
+}
